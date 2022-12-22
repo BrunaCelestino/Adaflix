@@ -2,17 +2,20 @@ package br.com.ada.adaflix.service;
 
 import br.com.ada.adaflix.model.Evento;
 import br.com.ada.adaflix.repository.EventoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class EventoService {
-    private final EventoRepository eventoRepository;
 
-    public EventoService(EventoRepository eventoRepository) {
-        this.eventoRepository = eventoRepository;
-    }
+    @Autowired
+    private  EventoRepository eventoRepository;
+
+//    public EventoService(EventoRepository eventoRepository) {
+//        this.eventoRepository = eventoRepository;
+//    }
 
     public Evento salvar(Evento evento) {
         return eventoRepository.save(evento);
