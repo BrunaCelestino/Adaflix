@@ -14,7 +14,6 @@ public class Evento {
 
     @Column(unique = true)
     private String cnpj;
-    private String empresa;
     private String nome;
     private String descricao;
     private LocalDateTime data;
@@ -23,23 +22,11 @@ public class Evento {
     private Long capacidade;
     private LocalDateTime inicioVendas;
     private LocalDate fimVendas;
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
 
-    public Evento(Long id, String cnpj, String empresa, String nome, String descricao, LocalDateTime data, String local, Double preco, Long capacidade, LocalDateTime inicioVendas, LocalDate fimVendas) {
-        this.id = id;
-        this.cnpj = cnpj;
-        this.empresa = empresa;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.data = data;
-        this.local = local;
-        this.preco = preco;
-        this.capacidade = capacidade;
-        this.inicioVendas = inicioVendas;
-        this.fimVendas = fimVendas;
-    }
-    public Evento(){
 
-    }
 
     public Long getId() {
         return id;
@@ -55,14 +42,6 @@ public class Evento {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
-    }
-
-    public String getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
     }
 
     public String getNome() {
@@ -127,5 +106,13 @@ public class Evento {
 
     public void setFimVendas(LocalDate fimVendas) {
         this.fimVendas = fimVendas;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 }

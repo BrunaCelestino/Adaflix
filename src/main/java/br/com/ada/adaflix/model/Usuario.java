@@ -21,15 +21,6 @@ public class Usuario {
     private String senha;
     private String telefone;
 
-    public Usuario(Long id, String nome, LocalDate dataNascimento, Endereco endereco, String email, String senha, String telefone) {
-        this.id = id;
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-        this.endereco = endereco;
-        this.email = email;
-        this.senha = senha;
-        this.telefone = telefone;
-    }
 
     public Long getId() {
         return id;

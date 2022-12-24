@@ -17,14 +17,6 @@ public class Empresa {
     private String telefone;
     private String email;
 
-    public Empresa(Long id, String nome, String cnpj, Endereco endereco, String telefone, String email) {
-        this.id = id;
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.email = email;
-    }
 
     public Long getId() {
         return id;

@@ -18,14 +18,7 @@ public class Endereco {
     private String cidade;
     private String estado;
 
-    public Endereco(Long id, String cep, String logradouro, String numero, String cidade, String estado) {
-        this.id = id;
-        this.cep = cep;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.cidade = cidade;
-        this.estado = estado;
-    }
+
 
     public Long getId() {
         return id;
