@@ -26,6 +26,6 @@ public class EventoService {
     }
 
     public Evento buscarPorId(Long id) {
-        return eventoRepository.findById(id).orElse(null);
+        return eventoRepository.findById(id).orElseThrow(IllegalArgumentException::new);
     }
 }

@@ -25,8 +25,12 @@ public class EventoController {
         return eventoService.listar();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/eventos/{id}")
     public Evento buscarPorId(@PathVariable Long id) {
+        return eventoService.buscarPorId(id);
+    }
+    @GetMapping("/eventos/filtrar")
+    public Evento buscarPorParametros(@RequestParam Long id) {
         return eventoService.buscarPorId(id);
     }
 }
